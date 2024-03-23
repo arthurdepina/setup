@@ -28,10 +28,33 @@ end
 
 -- add list of plugins to install
 return packer.startup(function(use)
-    -- packer can manage itself
-    use("wbthomason/packer.nvim")
+    use("wbthomason/packer.nvim") -- packer can manage itself
+
+    use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
     use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
+
+    use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
+    
+    use("szw/vim-maximizer") -- maximizes and restores current window
+
+    -- essential plugins
+    -- add, delete, change surroundings (it's awesome)
+    use("tpope/vim-surround")
+    -- replace with register contents using motion (gr + motion)
+    use("inkarkat/vim-ReplaceWithRegister")
+
+    -- commenting with gc
+    use("numToStr/Comment.nvim")
+
+    -- file explorer
+    use("nvim-tree/nvim-tree.lua")
+
+    -- vs-code like icons
+    use("nvim-tree/nvim-web-devicons")
+
+    -- statusline
+    use("nvim-lualine/lualine.nvim")
 
     if packer_bootstrap then
         require("packer").sync()
