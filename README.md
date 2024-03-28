@@ -1,2 +1,2 @@
 # setup
-my zsh and neovim setup
+my neovim setup
